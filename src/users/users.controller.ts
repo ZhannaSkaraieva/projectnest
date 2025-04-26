@@ -1,4 +1,8 @@
 //Контроллеры отвечают за обработку входящих запросов и отправку ответов клиенту.
+//Создание нового ресурса
+//nest g resource
+//сгенерированный файл контроллера (для REST API):Команда не только генерирует все строительные блоки NestJS 
+// (модули, службы, классы контроллеров), но также класс сущности, классы DTO, а также .specфайлы тестирования ( ).
 
 import { Controller,Post,HttpCode,Body, Get } from '@nestjs/common';
 import { UsersService } from './users.service';
@@ -28,10 +32,20 @@ constructor(private readonly usersService: UsersService) {}
     return this.usersService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.usersService.findOne(+id);
-  }
+  // @Get(':id')
+  // findOne(@Param('id') id: string) {
+  //   return this.usersService.findOne(+id);
+  // }
+
+  // @Patch(':id')
+  // update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
+  //   return this.usersService.update(+id, updateUserDto);
+  // }
+
+  // @Delete(':id')
+  // remove(@Param('id') id: string) {
+  //   return this.usersService.remove(+id);
+  // }
 }
 
 

@@ -10,10 +10,16 @@ export class UsersService {
         //проверка на то , есть ли User с id уже в массиве
         const user = this.users.some(user => user.id === createUserDto.id);
     if (user) {
-        return Error('User with this ID already exists');
+        throw new Error('User with this ID already exists');
     };
     this.users.push(createUserDto);
     return createUserDto;
-  }
-  }
+    };
+
+    findAll(): CreateUserDto [] {
+        return this.users;
+    };
+}
+  
+
 
