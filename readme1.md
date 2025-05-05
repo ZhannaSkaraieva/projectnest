@@ -27,7 +27,7 @@ npx @nestjs/cli
    src/app.controller.ts: Базовый контроллер с одним маршрутом: /. Этот маршрут вернет простое 'Hello World!'сообщение.
    src/main.ts: Точка входа приложения. Она запустит приложение NestJS.
 
-5. запустить проект: npm run start:dev
+5. запустить проект: npm run start:dev  (!!! это запускать только после docker compose up)
 
 СОЗДАНИЕ  экземпляра PostgreSQL
 
