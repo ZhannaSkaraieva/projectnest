@@ -3,6 +3,7 @@
 
 export class CreateUserDto { //создаем класс
     id: number;
+    email: string;
     name: string;
     age: number;
   

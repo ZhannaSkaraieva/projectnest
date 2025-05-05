@@ -53,6 +53,7 @@ volumes:
 
 8. Чтобы запустить postgres контейнер, откройте новое окно терминала и выполните следующую команду в главной папке вашего проекта:
 docker-compose up
+Перед этим запустить OrbSteck
 
 НАСТРОЙКА Prisma
 
@@ -79,8 +80,11 @@ npx prisma migrate dev --name init
 Команда сохранит копию базы и фаил миграции в папке prisma/migrations
 Prisma сгенерирует Prisma Client на основе вашей последней схемы.
 
+Запуск просмотра БД 
+npx prisma studio
+
 13. Создание службы Prisma. Это абстрагирование API Prisma Client от приложения для дальнейшего переиспользования.
-Эта служба, называемая PrismaService, будет отвечать за создание PrismaClientэкземпляра и подключение к вашей базе данных.
+Эта служба, называемая PrismaService, будет отвечать за создание PrismaClient экземпляра и подключение к вашей базе данных.
 npx nest generate module prisma
 npx nest generate service prisma
 

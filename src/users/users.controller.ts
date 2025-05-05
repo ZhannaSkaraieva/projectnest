@@ -7,8 +7,9 @@
 import { Controller,Post,HttpCode,Body, Get } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './user.dto';
+import { PrismaService } from 'src/prisma/prisma.service';
 
-@Controller('users')
+@Controller('user')
   //путь маршрута включает любую строку пути, указанную в декораторе метода ('users')
   //Например, если префикс контроллера — userss, а декоратор метода — @Get('name'),
   // то результирующий маршрут будет GET /users/name.
@@ -16,7 +17,7 @@ import { CreateUserDto } from './user.dto';
 export class UsersController {
 
 //Nest сам подставляет UsersService в контроллер для дальнейшего исспользования 
-constructor(private readonly usersService: UsersService) {}
+ constructor(private readonly usersService: UsersService) { }
 
   @Post()
   @HttpCode(201) //Код статуса запроса
